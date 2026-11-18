@@ -1,0 +1,58 @@
+<div class="profile-page">
+  <!-- User's basic info & action buttons -->
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <img [attr.src]="state().image || null" class="user-img" />
+          <h4>{{ state().username }}</h4>
+          <p>{{ state().bio }}</p>
+
+          @if (isUser()) {
+            <a routerLink="/settings" class="btn btn-sm btn-outline-secondary action-btn">
+              <i class="ion-gear-a"></i> Edit Profile Settings
+            </a>
+          } @else {
+            <app-follow-btn [(user)]="state" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container where User's posts & favs are list w/ toggle tabs -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <!-- Tabs for switching between author articles & favorites -->
+        <div class="articles-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/@' + state().username]"
+              >
+                My Articles
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/@' + state().username, 'favorites']"
+              >
+                Favorited Articles
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- List of articles -->
+        <router-outlet />
+      </div>
+    </div>
+  </div>
+</div>
