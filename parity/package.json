@@ -1,0 +1,14 @@
+{
+  "name": "conduit-parity",
+  "private": true,
+  "description": "Side-by-side Playwright parity suite: legacy AngularJS Conduit (port 4000) vs Angular 21 Conduit (port 4200)",
+  "scripts": {
+    "test": "playwright test",
+    "test:legacy": "playwright test --project=legacy",
+    "test:angular": "playwright test --project=angular",
+    "report": "python3 compose.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
