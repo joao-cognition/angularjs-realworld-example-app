@@ -42,19 +42,29 @@ test('favorite and unfavorite; favorites tab on profile', async ({ page, request
   const favBtn = page.locator('.banner').getByRole('button', { name: /Unfavorite Article/ });
   await expect(favBtn).toContainText(`(${before + 1})`);
   await favBtn.click();
-  await expect(page.locator('.banner').getByRole('button', { name: /(?<!Un)Favorite Article/ })).toContainText(`(${before})`);
+  await expect(
+    page.locator('.banner').getByRole('button', { name: /(?<!Un)Favorite Article/ }),
+  ).toContainText(`(${before})`);
 });
 
-test('follow author from article page; your feed; unfollow from profile', async ({ page, request }, info) => {
+test('follow author from article page; your feed; unfollow from profile', async ({
+  page,
+  request,
+}, info) => {
   const article = await firstDemoArticle(request);
   const author = article.author.username;
   const user = await registerViaApi(request, uniqueUser(info, 'fo'));
   await loginWithToken(page, info, user.token!, `/article/${article.slug}`);
 
-  await page.locator('.banner').getByRole('button', { name: `Follow ${author}` }).click();
-  await expect(page.locator('.banner').getByRole('button', { name: `Unfollow ${author}` })).toBeVisible();
+  await page
+    .locator('.banner')
+    .getByRole('button', { name: `Follow ${author}` })
+    .click();
+  await expect(
+    page.locator('.banner').getByRole('button', { name: `Unfollow ${author}` }),
+  ).toBeVisible();
 
-  await go(page, info, '/');
+  await go(page, info, '/?feed=following');
   await expect(activeTab(page)).toHaveText('Your Feed');
   await waitForArticles(page);
   await expect(previews(page).filter({ hasText: article.title })).toHaveCount(1);
@@ -64,7 +74,7 @@ test('follow author from article page; your feed; unfollow from profile', async 
   const unfollow = page.locator('.user-info').getByRole('button', { name: `Unfollow ${author}` });
   await expect(unfollow).toHaveClass(/btn-secondary/);
   await unfollow.click();
-  await expect(page.locator('.user-info').getByRole('button', { name: `Follow ${author}` })).toHaveClass(
-    /btn-outline-secondary/,
-  );
+  await expect(
+    page.locator('.user-info').getByRole('button', { name: `Follow ${author}` }),
+  ).toHaveClass(/btn-outline-secondary/);
 });

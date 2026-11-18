@@ -12,7 +12,9 @@ test('settings prefill and update bio/image', async ({ page, request }, info) =>
 
   const bio = `Parity bio ${Date.now()}`;
   await page.getByPlaceholder('Short bio about you').fill(bio);
-  await page.getByPlaceholder('URL of profile picture').fill('https://api.realworld.show/images/smiley-cyrus.jpeg');
+  await page
+    .getByPlaceholder('URL of profile picture')
+    .fill('https://api.realworld.show/images/smiley-cyrus.jpeg');
   await page.getByRole('button', { name: 'Update Settings' }).click();
 
   await expect(page).toHaveURL(urlMatcher(info, `/profile/${user.username}`));

@@ -13,7 +13,7 @@ test('sign up, log out, sign in', async ({ page }, info) => {
   await page.getByPlaceholder('Password').fill(user.password);
   await page.getByRole('button', { name: 'Sign up' }).click();
 
-  await expect(page).toHaveURL(urlMatcher(info, '/$'));
+  await expect(page).toHaveURL(urlMatcher(info, '/(\\?feed=following)?$'));
   const nav = page.locator('.navbar');
   await expect(nav.getByRole('link', { name: user.username })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'New Article' })).toBeVisible();
@@ -28,7 +28,7 @@ test('sign up, log out, sign in', async ({ page }, info) => {
   await nav.getByRole('link', { name: 'Settings' }).click();
   await page.getByRole('button', { name: 'Or click here to logout.' }).click();
   await expect(nav.getByRole('link', { name: 'Sign in' })).toBeVisible();
-  await expect(page).toHaveURL(urlMatcher(info, '/$'));
+  await expect(page).toHaveURL(urlMatcher(info, '/(\\?feed=following)?$'));
   expect(await page.evaluate(() => localStorage.getItem('jwtToken'))).toBeFalsy();
 
   await nav.getByRole('link', { name: 'Sign in' }).click();
@@ -42,7 +42,10 @@ test('sign up, log out, sign in', async ({ page }, info) => {
 });
 
 test('sign in with wrong password shows errors', async ({ page, request }, info) => {
-  test.fail(isLegacy(info), 'Legacy bug: the 401 interceptor hard-reloads the page, so login errors never render');
+  test.fail(
+    isLegacy(info),
+    'Legacy bug: the 401 interceptor hard-reloads the page, so login errors never render',
+  );
   const user = await registerViaApi(request, uniqueUser(info, 'bad'));
   await go(page, info, '/login');
   await page.getByPlaceholder('Email').fill(user.email);
@@ -52,7 +55,6 @@ test('sign in with wrong password shows errors', async ({ page, request }, info)
   await expect(page.locator('.error-messages')).toContainText(/invalid/i);
   await shot(page, info, '07-login-error');
 });
-
 
 test('sign up with blank fields shows validation errors', async ({ page }, info) => {
   await go(page, info, '/register');

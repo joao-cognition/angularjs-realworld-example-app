@@ -14,8 +14,12 @@ test('article page (logged out): body, tags, author, comments prompt', async ({ 
   await expect(page).toHaveTitle(`${title} — Conduit`);
   await expect(page.locator('.banner .article-meta .author')).toHaveText(author);
   await expect(page.locator('.article-content')).not.toBeEmpty();
-  await expect(page.locator('.banner').getByRole('button', { name: new RegExp(`Follow ${author}`) })).toBeVisible();
-  await expect(page.locator('.banner').getByRole('button', { name: /Favorite Article/ })).toBeVisible();
+  await expect(
+    page.locator('.banner').getByRole('button', { name: new RegExp(`Follow ${author}`) }),
+  ).toBeVisible();
+  await expect(
+    page.locator('.banner').getByRole('button', { name: /Favorite Article/ }),
+  ).toBeVisible();
   await expect(page.locator('.banner').getByText('Edit Article')).toBeHidden();
   await expect(page.getByText('to add comments on this article.')).toBeVisible();
   await expect(page.locator('textarea[placeholder="Write a comment..."]')).toBeHidden();

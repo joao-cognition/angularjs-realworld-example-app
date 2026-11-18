@@ -41,7 +41,10 @@ export function uniqueUser(info: TestInfo, prefix = 'par'): TestUser {
   return { username, email: `${username}@example.com`, password: 'Parity-pass-123' };
 }
 
-export async function registerViaApi(request: APIRequestContext, user: TestUser): Promise<TestUser> {
+export async function registerViaApi(
+  request: APIRequestContext,
+  user: TestUser,
+): Promise<TestUser> {
   const res = await request.post(`${API}/users`, { data: { user } });
   expect(res.ok(), `register ${user.username}: ${res.status()}`).toBeTruthy();
   const body = await res.json();
@@ -64,7 +67,7 @@ export async function createArticleViaApi(
 /** Log in by seeding the shared `jwtToken` localStorage key both apps read on boot. */
 export async function loginWithToken(page: Page, info: TestInfo, token: string, logical = '/') {
   await page.goto(route(info, '/'));
-  await page.evaluate(t => localStorage.setItem('jwtToken', t), token);
+  await page.evaluate((t) => localStorage.setItem('jwtToken', t), token);
   await page.goto(route(info, logical));
   await page.reload();
 }
@@ -77,7 +80,12 @@ export async function waitForArticles(page: Page) {
 export async function firstDemoArticle(request: APIRequestContext) {
   const res = await request.get(`${API}/articles?limit=1`);
   const body = await res.json();
-  return body.articles[0] as { slug: string; title: string; favoritesCount: number; author: { username: string } };
+  return body.articles[0] as {
+    slug: string;
+    title: string;
+    favoritesCount: number;
+    author: { username: string };
+  };
 }
 
 export function activeTab(page: Page, container = '.feed-toggle') {

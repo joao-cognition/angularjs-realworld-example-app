@@ -12,26 +12,38 @@ import {
   waitForArticles,
 } from './helpers';
 
-test('profile of another user (logged out): info, follow button, tabs', async ({ page, request }, info) => {
+test('profile of another user (logged out): info, follow button, tabs', async ({
+  page,
+  request,
+}, info) => {
   const author = (await firstDemoArticle(request)).author.username;
   await go(page, info, `/profile/${author}`);
   await expect(page).toHaveTitle(`@${author} — Conduit`);
   await expect(page.locator('.user-info h4')).toHaveText(author);
   await expect(page.locator('.user-info p')).not.toBeEmpty();
-  await expect(page.locator('.user-info').getByRole('button', { name: `Follow ${author}` })).toBeVisible();
+  await expect(
+    page.locator('.user-info').getByRole('button', { name: `Follow ${author}` }),
+  ).toBeVisible();
   await expect(page.locator('.user-info').getByText('Edit Profile Settings')).toBeHidden();
   await expect(activeTab(page, '.articles-toggle')).toHaveText('My Articles');
   await waitForArticles(page);
   const n = await previews(page).count();
   expect(n).toBeGreaterThan(0);
-  for (let i = 0; i < n; i++) await expect(previews(page).nth(i).locator('.author')).toHaveText(author);
+  for (let i = 0; i < n; i++)
+    await expect(previews(page).nth(i).locator('.author')).toHaveText(author);
   await shot(page, info, '14-profile-other-user');
 
-  await page.locator('.user-info').getByRole('button', { name: `Follow ${author}` }).click();
+  await page
+    .locator('.user-info')
+    .getByRole('button', { name: `Follow ${author}` })
+    .click();
   await expect(page).toHaveURL(/register/);
 });
 
-test('own profile: my articles paginated by 5, favorites tab, settings link', async ({ page, request }, info) => {
+test('own profile: my articles paginated by 5, favorites tab, settings link', async ({
+  page,
+  request,
+}, info) => {
   const author = await registerViaApi(request, uniqueUser(info, 'pr'));
   for (let i = 0; i < 6; i++) {
     await createArticleViaApi(request, author.token!, {

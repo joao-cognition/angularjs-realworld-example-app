@@ -1,5 +1,15 @@
 import { expect, test } from '@playwright/test';
-import { activeTab, createArticleViaApi, go, loginWithToken, registerViaApi, uniqueUser, previews, shot, waitForArticles } from './helpers';
+import {
+  activeTab,
+  createArticleViaApi,
+  go,
+  loginWithToken,
+  registerViaApi,
+  uniqueUser,
+  previews,
+  shot,
+  waitForArticles,
+} from './helpers';
 
 test.describe('home', () => {
   test('global feed, banner, tags and title (logged out)', async ({ page }, info) => {
@@ -18,7 +28,9 @@ test.describe('home', () => {
     await expect(first.locator('.article-meta .author')).not.toBeEmpty();
     await expect(first.locator('.preview-link h1')).not.toBeEmpty();
     await expect(first.locator('.preview-link')).toContainText('Read more...');
-    await expect(first.locator('button.btn-outline-primary, button.btn-primary')).toContainText(/\d+/);
+    await expect(first.locator('button.btn-outline-primary, button.btn-primary')).toContainText(
+      /\d+/,
+    );
 
     await expect(page.locator('.sidebar')).toContainText('Popular Tags');
     await expect(page.locator('.sidebar .tag-list a.tag-pill').first()).toBeVisible();
@@ -29,7 +41,11 @@ test.describe('home', () => {
   test('pagination moves to page 2 (logged in, global feed)', async ({ page, request }, info) => {
     const user = await registerViaApi(request, uniqueUser(info, 'pg'));
     for (let i = 0; i < 11; i++) {
-      await createArticleViaApi(request, user.token!, { title: `Paged ${i} ${Date.now()}`, description: 'p', body: 'p' });
+      await createArticleViaApi(request, user.token!, {
+        title: `Paged ${i} ${Date.now()}`,
+        description: 'p',
+        body: 'p',
+      });
     }
     await loginWithToken(page, info, user.token!, '/');
     await page.locator('.feed-toggle a.nav-link', { hasText: 'Global Feed' }).click();
@@ -58,7 +74,9 @@ test.describe('home', () => {
 
     const tagTab = activeTab(page);
     await expect(tagTab).toContainText(tagName);
-    await expect(page.locator('.feed-toggle a.nav-link', { hasText: 'Global Feed' })).not.toHaveClass(/active/);
+    await expect(
+      page.locator('.feed-toggle a.nav-link', { hasText: 'Global Feed' }),
+    ).not.toHaveClass(/active/);
     await waitForArticles(page);
     await expect(previews(page).first()).toBeVisible();
     const n = await previews(page).count();

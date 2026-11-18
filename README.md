@@ -1,24 +1,51 @@
-# ![Angular 1.5+ ES6 & Component API Example App](project-logo.png)
+# ![Angular 21 RealWorld Example App](project-logo.png)
 
-> Example Angular 1.5+ (ES6 + Components) codebase that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+> Angular 21 (standalone components, signals, zoneless) codebase that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
-View the **[demo application](https://angularjs.realworld.io)** or **[learn how to build the application from scratch](https://thinkster.io/angularjs-es6-tutorial)**!
+This app was rewritten from the original AngularJS 1.5 (ES6 + components, Gulp/Browserify) version. The legacy source is in git history (commit `2bc11d0`).
 
 # Getting started
 
-1. Clone repo
-2. `npm install`
-3. `gulp`
+Requires Node `^20.19`, `^22.12` or `>=24`.
 
-Make sure you have gulp installed globally (`npm install -g gulp`)
+```bash
+npm install
+npm start          # ng serve -> http://localhost:4200
+npm run build      # ng build -> dist/browser
+npm test           # unit tests (Vitest via ng test)
+npm run format     # Prettier
+```
+
+### Structure
+
+```
+src/app/
+  core/       models, API URL, services (Api, Jwt, User, Articles, Comments, Tags, Profile),
+              auth interceptor, auth guards, title strategy, window.__conduit_debug__
+  shared/     article list/preview/meta, favorite + follow buttons, pagination, list-errors,
+              markdown + default-image pipes
+  layout/     header, footer
+  features/   home, auth (login/register), article (+comments), editor, profile, settings
+```
+
+### Routes
+
+| Route | Page |
+| --- | --- |
+| `/`, `/?feed=following`, `/tag/:tag` (+ `?page=N`) | Home: global feed, your feed, tag filter |
+| `/login`, `/register` | Sign in / sign up (signed-in users are sent home) |
+| `/editor`, `/editor/:slug` | New / edit article (requires sign in) |
+| `/settings` | Settings + logout (requires sign in) |
+| `/article/:slug` | Article, comments, favorite, follow |
+| `/profile/:username`, `/profile/:username/favorites` | Profile articles / favorites |
 
 ### Making requests to the backend API
 
-For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+The app uses the public RealWorld API at `https://api.realworld.show/api`. To use another backend, change `API_URL` in `src/app/core/api.config.ts`. The JWT is stored in `localStorage` under `jwtToken` and sent as `Authorization: Token <jwt>`.
 
-The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
+### Parity suite
 
-If you want to change the API URL to a local server, simply edit `src/js/config/app.constants.js` and change `api` to the local server's URL (i.e. `localhost:3000/api`)
+`parity/` holds a Playwright suite that runs the same specs against the legacy AngularJS app (port 4000) and this app (port 4200), and composes side-by-side screenshots. See [`parity/README.md`](parity/README.md).
 
 <br />
 

@@ -10,14 +10,19 @@ test('publish, comment, edit and delete an article', async ({ page, request }, i
   const title = `Parity article ${Date.now()}`;
   await page.getByPlaceholder('Article Title').fill(title);
   await page.getByPlaceholder("What's this article about?").fill('Parity description');
-  await page.getByPlaceholder('Write your article (in markdown)').fill('Hello **bold** world\n\n- item one\n- item two');
+  await page
+    .getByPlaceholder('Write your article (in markdown)')
+    .fill('Hello **bold** world\n\n- item one\n- item two');
   const tags = page.getByPlaceholder('Enter tags');
   await tags.fill('paritytag');
   await tags.press('Enter');
   await tags.fill('second');
   await tags.press('Enter');
   await expect(page.locator('.tag-list .tag-pill')).toHaveCount(2);
-  await page.locator('.tag-list .tag-pill', { hasText: 'second' }).locator('.ion-close-round').click();
+  await page
+    .locator('.tag-list .tag-pill', { hasText: 'second' })
+    .locator('.ion-close-round')
+    .click();
   await expect(page.locator('.tag-list .tag-pill')).toHaveCount(1);
   await shot(page, info, '09-editor');
   await page.getByRole('button', { name: 'Publish Article' }).click();
@@ -45,7 +50,9 @@ test('publish, comment, edit and delete an article', async ({ page, request }, i
   await page.locator('.banner').getByText('Edit Article').click();
   await expect(page).toHaveURL(urlMatcher(info, '/editor/.+'));
   await expect(page.getByPlaceholder('Article Title')).toHaveValue(title);
-  await expect(page.getByPlaceholder('Write your article (in markdown)')).toHaveValue(/Hello \*\*bold\*\* world/);
+  await expect(page.getByPlaceholder('Write your article (in markdown)')).toHaveValue(
+    /Hello \*\*bold\*\* world/,
+  );
   await expect(page.locator('.tag-list .tag-pill')).toHaveCount(1);
   await page.getByPlaceholder('Article Title').fill(`${title} edited`);
   await page.getByRole('button', { name: 'Publish Article' }).click();
