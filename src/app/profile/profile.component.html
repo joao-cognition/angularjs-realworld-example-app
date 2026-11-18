@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-10 offset-md-1">
-          <img [src]="state().image ?? ''" class="user-img" />
+          <img [attr.src]="state().image || null" class="user-img" />
           <h4>{{ state().username }}</h4>
           <p>{{ state().bio }}</p>
 

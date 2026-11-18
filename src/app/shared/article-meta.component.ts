@@ -9,7 +9,7 @@ import { Article } from '../core/models';
   template: `
     <div class="article-meta">
       <a [routerLink]="['/@' + article().author.username]">
-        <img [src]="article().author.image ?? ''" />
+        <img [attr.src]="article().author.image || null" />
       </a>
 
       <div class="info">

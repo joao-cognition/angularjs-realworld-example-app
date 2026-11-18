@@ -14,7 +14,7 @@ import { UserService } from '../core/user.service';
       </div>
       <div class="card-footer">
         <a class="comment-author" [routerLink]="['/@' + comment().author.username]">
-          <img [src]="comment().author.image ?? ''" class="comment-author-img" />
+          <img [attr.src]="comment().author.image || null" class="comment-author-img" />
         </a>
         &nbsp;
         <a class="comment-author" [routerLink]="['/@' + comment().author.username]">

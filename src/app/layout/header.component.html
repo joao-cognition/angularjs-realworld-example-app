@@ -52,7 +52,7 @@
       @if (currentUser(); as user) {
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" [routerLink]="['/@' + user.username]">
-            <img [src]="user.image ?? ''" class="user-pic" />
+            <img [attr.src]="user.image || null" class="user-pic" />
             {{ user.username }}
           </a>
         </li>
