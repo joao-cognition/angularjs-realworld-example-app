@@ -51,6 +51,10 @@ Legacy: 30/30 pass · Angular: 0/30 pass
 
 ![article.png](side-by-side/article.png)
 
+### editor-edit
+
+![editor-edit.png](side-by-side/editor-edit.png)
+
 ### editor
 
 ![editor.png](side-by-side/editor.png)
