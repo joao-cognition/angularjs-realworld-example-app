@@ -64,6 +64,7 @@ test('own profile: my articles paginated by 5, favorites tab, settings link', as
   await shot(page, info, '15-profile-own-articles');
   await page.locator('.pagination .page-item').nth(1).locator('.page-link').click();
   await expect(page.locator('.pagination .page-item').nth(1)).toHaveClass(/active/);
+  await expect(page).toHaveTitle(`@${author.username} — Conduit`);
   await waitForArticles(page);
   await expect(previews(page)).toHaveCount(1);
 

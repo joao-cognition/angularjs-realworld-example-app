@@ -60,7 +60,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        title: 'Profile',
+        title: (route) => `@${route.paramMap.get('username')}`,
         data: { tab: 'author' },
         loadComponent: () =>
           import('./features/profile/profile-articles.component').then(
@@ -69,7 +69,7 @@ export const routes: Routes = [
       },
       {
         path: 'favorites',
-        title: 'Favorites',
+        title: (route) => `Articles favorited by ${route.paramMap.get('username')}`,
         data: { tab: 'favorited' },
         loadComponent: () =>
           import('./features/profile/profile-articles.component').then(
