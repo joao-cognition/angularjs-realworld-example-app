@@ -1,0 +1,70 @@
+<div class="article-page">
+  <!-- Banner for article title, action buttons -->
+  <div class="banner">
+    <div class="container">
+      <h1>{{ state().title }}</h1>
+
+      <div class="article-meta">
+        <!-- Show author info + favorite & follow buttons -->
+        <app-article-actions [(article)]="state" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main view. Contains article html and comments -->
+  <div class="container page">
+    <!-- Article's HTML & tags rendered here -->
+    <div class="row article-content">
+      <div class="col-xs-12">
+        <div [innerHTML]="state().body | markdown"></div>
+
+        <ul class="tag-list">
+          @for (tag of state().tagList; track tag) {
+            <li class="tag-default tag-pill tag-outline">{{ tag }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="article-actions">
+      <!-- Show author info + favorite & follow buttons -->
+      <app-article-actions [(article)]="state" />
+    </div>
+
+    <!-- Comments section -->
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div *appShowAuthed="true">
+          <app-list-errors [errors]="commentErrors()" />
+          <form class="card comment-form" (ngSubmit)="addComment()">
+            <fieldset [disabled]="isSubmittingComment()">
+              <div class="card-block">
+                <textarea
+                  class="form-control"
+                  placeholder="Write a comment..."
+                  rows="3"
+                  [formControl]="commentBody"
+                ></textarea>
+              </div>
+              <div class="card-footer">
+                <img [src]="currentUser()?.image ?? ''" class="comment-author-img" />
+                <button class="btn btn-sm btn-primary" type="submit">Post Comment</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div *appShowAuthed="false">
+          <a routerLink="/login">Sign in</a> or <a routerLink="/register">sign up</a> to add
+          comments on this article.
+        </div>
+
+        @for (comment of comments(); track comment.id) {
+          <app-comment [comment]="comment" (delete)="deleteComment(comment)" />
+        }
+      </div>
+    </div>
+  </div>
+</div>
