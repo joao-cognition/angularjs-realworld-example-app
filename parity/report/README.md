@@ -15,7 +15,7 @@ They assert visible text, counts, enabled state and URLs, never framework intern
 
 | Flow | Spec | Legacy | Angular |
 | --- | --- | --- | --- |
-| Global feed (anonymous), pagination | `home.spec.ts` › global feed | ✅ | ✅ |
+| Global feed (anonymous), pager count (page navigation is checked in profile pagination) | `home.spec.ts` › global feed | ✅ | ✅ |
 | Tag filter | `home.spec.ts` › tag filter | ✅ | ✅ |
 | Article page, Markdown, comments (anonymous) | `article.spec.ts` › article page + comments | ✅ | ✅ |
 | Unknown article → home | `article.spec.ts` | ✅ | ✅ |

@@ -1,4 +1,5 @@
 import { expect, Page, TestInfo, test } from '@playwright/test';
+import { randomBytes } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -49,6 +50,11 @@ export interface User {
 }
 
 let seq = 0;
+/** Per-account throwaway password, so no usable credential is committed. */
+export function randomPassword() {
+  return randomBytes(12).toString('base64url');
+}
+
 export function uniqueName(prefix: string, info: TestInfo = test.info()) {
   const app = appOf(info) === 'legacy' ? 'l' : 'a';
   return `${prefix}${app}${Date.now().toString(36)}${(seq++).toString(36)}`;
@@ -71,7 +77,7 @@ async function api<T>(method: string, route: string, body?: unknown, token?: str
 export async function createUser(prefix = 'pu', attempt = 1): Promise<User> {
   const username = uniqueName(prefix);
   const email = `${username}@parity.test`;
-  const password = 'parity-pass-123';
+  const password = randomPassword();
   const res = await api<{ user: { token: string } }>('POST', '/users', {
     user: { username, email, password },
   });

@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import {
   createUser,
+  randomPassword,
   expectRoute,
   go,
   signInAs,
@@ -22,7 +23,7 @@ test('sign up', async ({ page }) => {
 
   await page.getByPlaceholder('Username').fill(username);
   await page.getByPlaceholder('Email').fill(`${username}@parity.test`);
-  await page.getByPlaceholder('Password').fill('parity-pass-123');
+  await page.getByPlaceholder('Password').fill(randomPassword());
   await page.getByRole('button', { name: 'Sign up' }).click();
 
   await expectRoute(page, '/');
@@ -59,12 +60,10 @@ test('sign in (bad then good credentials)', async ({ page }) => {
   if (appOf() === 'legacy') {
     // Known legacy bug (kept in the baseline, fixed in Angular): the API answers bad credentials with 401
     // and the AngularJS auth interceptor hard-reloads the page on any 401, wiping the error and the form.
-    test
-      .info()
-      .annotations.push({
-        type: 'legacy-bug',
-        description: 'Bad sign-in reloads the page; no error shown',
-      });
+    test.info().annotations.push({
+      type: 'legacy-bug',
+      description: 'Bad sign-in reloads the page; no error shown',
+    });
     await expect(page.getByPlaceholder('Password')).toHaveValue('');
     await expect(page.locator('.error-messages li')).toHaveCount(0);
   } else {
