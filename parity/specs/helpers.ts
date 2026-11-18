@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import { expect, type APIRequestContext, type Page, type TestInfo } from '@playwright/test';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -38,7 +39,7 @@ export function uniqueUser(info: TestInfo, prefix = 'par'): TestUser {
   const id = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
   const tag = isLegacy(info) ? 'l' : 'a';
   const username = `${prefix}${tag}${id}`;
-  return { username, email: `${username}@example.com`, password: 'Parity-pass-123' };
+  return { username, email: `${username}@example.com`, password: `P-${randomUUID()}` };
 }
 
 export async function registerViaApi(
