@@ -37,3 +37,13 @@ node_modules
 build/*
 dist/*
 src/js/config/app.templates.js
+
+# Parity suite
+parity/node_modules
+parity/test-results
+parity/playwright-report
+parity/.auth
+# Angular app
+angular/node_modules
+angular/dist
+angular/.angular
