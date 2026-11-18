@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { go, header, createUser, signInAs, snap } from '../helpers/app';
+import { go, header, createUser, signInAs, snap, expectRoute } from '../helpers/app';
 
 test.describe('layout (shell)', () => {
   test('anonymous header, footer and title', async ({ page }, testInfo) => {
@@ -28,6 +28,7 @@ test.describe('layout (shell)', () => {
 
   test('unknown route falls back to home', async ({ page }, testInfo) => {
     await go(page, testInfo, '/no-such-page');
-    await expect(page.getByText('Popular Tags')).toBeVisible();
+    await expectRoute(page, '/');
+    await expect(page).toHaveTitle('Home — Conduit');
   });
 });
