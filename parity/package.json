@@ -1,0 +1,14 @@
+{
+  "name": "conduit-parity",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:legacy": "playwright test --project=legacy",
+    "test:angular": "playwright test --project=angular",
+    "report": "python3 compose.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^26.6.6"
+  }
+}
