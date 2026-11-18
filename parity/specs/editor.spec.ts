@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { go, header, createUser, createArticle, signInAs, expectRoute, snap } from '../helpers/app';
+import { go, header, createUser, createArticle, signInAs, expectRoute, snap, apiGet } from '../helpers/app';
 
 test.describe('editor', () => {
   test('publish, edit and delete an article', async ({ page, request }, testInfo) => {
@@ -37,6 +37,29 @@ test.describe('editor', () => {
 
     await page.getByRole('button', { name: /Delete Article/ }).first().click();
     await expectRoute(page, '/');
+  });
+
+  test('edit loads your article and saves the changes', async ({ page, request }, testInfo) => {
+    const user = await createUser(request, 'edload');
+    const title = `Loaded ${Date.now()}`;
+    const art = await createArticle(request, user, { title, description: 'desc', body: 'body text', tagList: ['one', 'two'] });
+    await signInAs(page, testInfo, user, `/editor/${art.slug}`);
+    await expect(page.getByPlaceholder('Article Title')).toHaveValue(title);
+    await expect(page.getByPlaceholder("What's this article about?")).toHaveValue('desc');
+    await expect(page.getByPlaceholder('Write your article (in markdown)')).toHaveValue('body text');
+    await expect(page.locator('.tag-list .tag-pill')).toHaveText(['one', 'two']);
+    await snap(page, testInfo, 'editor-edit');
+    await page.getByPlaceholder("What's this article about?").fill('desc edited');
+    const tags = page.getByPlaceholder('Enter tags');
+    await tags.fill('three');
+    await tags.press('Enter');
+    await page.locator('.tag-list .tag-pill').filter({ hasText: 'one' }).locator('i').click();
+    await expect(page.locator('.tag-list .tag-pill')).toHaveText(['two', 'three']);
+    await page.getByRole('button', { name: 'Publish Article' }).click();
+    await expectRoute(page, `/article/${art.slug}`);
+    const saved = (await apiGet(request, `/articles/${art.slug}`, user)).article;
+    expect(saved.description).toBe('desc edited');
+    expect([...saved.tagList].sort()).toEqual(['three', 'two']);
   });
 
   test('missing fields show server errors', async ({ page, request }, testInfo) => {
