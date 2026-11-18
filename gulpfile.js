@@ -46,6 +46,12 @@ gulp.task('html', function() {
       .pipe(gulp.dest('./build/'));
 });
 
+gulp.task('assets', function() {
+  return gulp.src("src/assets/**/*")
+      .on('error', interceptErrors)
+      .pipe(gulp.dest('./build/assets/'));
+});
+
 gulp.task('views', function() {
   return gulp.src(viewFiles)
       .pipe(templateCache({
@@ -58,7 +64,7 @@ gulp.task('views', function() {
 
 // This task is used for building production ready
 // minified JS/CSS files into the dist/ folder
-gulp.task('build', ['html', 'browserify'], function() {
+gulp.task('build', ['html', 'assets', 'browserify'], function() {
   var html = gulp.src("build/index.html")
                  .pipe(gulp.dest('./dist/'));
 
@@ -66,10 +72,13 @@ gulp.task('build', ['html', 'browserify'], function() {
                .pipe(uglify())
                .pipe(gulp.dest('./dist/'));
 
-  return merge(html,js);
+  var assets = gulp.src("build/assets/**/*")
+                   .pipe(gulp.dest('./dist/assets/'));
+
+  return merge(html,js,assets);
 });
 
-gulp.task('default', ['html', 'browserify'], function() {
+gulp.task('default', ['html', 'assets', 'browserify'], function() {
 
   browserSync.init(['./build/**/**.**'], {
     server: "./build",
