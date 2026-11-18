@@ -24,7 +24,7 @@ import { UserService } from '../core/user.service';
               <a class="nav-link" routerLink="/settings" routerLinkActive="active"><i class="ion-gear-a"></i>&nbsp;Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="'/@' + currentUser.username" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="'/@' + currentUser.username" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <img [attr.src]="currentUser.image || null" class="user-pic" />
                 {{ currentUser.username }}
               </a>
