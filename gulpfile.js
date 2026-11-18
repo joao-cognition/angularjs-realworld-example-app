@@ -41,9 +41,12 @@ gulp.task('browserify', ['views'], function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src("src/index.html")
+  var html = gulp.src("src/index.html")
       .on('error', interceptErrors)
       .pipe(gulp.dest('./build/'));
+  var assets = gulp.src("src/assets/**/*")
+      .pipe(gulp.dest('./build/assets/'));
+  return merge(html, assets);
 });
 
 gulp.task('views', function() {
@@ -62,11 +65,14 @@ gulp.task('build', ['html', 'browserify'], function() {
   var html = gulp.src("build/index.html")
                  .pipe(gulp.dest('./dist/'));
 
+  var assets = gulp.src("build/assets/**/*")
+                 .pipe(gulp.dest('./dist/assets/'));
+
   var js = gulp.src("build/main.js")
                .pipe(uglify())
                .pipe(gulp.dest('./dist/'));
 
-  return merge(html,js);
+  return merge(html,assets,js);
 });
 
 gulp.task('default', ['html', 'browserify'], function() {
@@ -75,6 +81,7 @@ gulp.task('default', ['html', 'browserify'], function() {
     server: "./build",
     port: 4000,
     notify: false,
+    open: false,
     ui: {
       port: 4001
     }
