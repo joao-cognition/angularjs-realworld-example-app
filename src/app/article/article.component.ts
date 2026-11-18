@@ -1,5 +1,5 @@
 import { Component, effect, inject, input, linkedSignal, signal } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommentsService } from '../core/comments.service';
 import { extractErrors } from '../core/errors';
@@ -33,6 +33,7 @@ export class ArticleComponent {
   readonly currentUser = inject(UserService).current;
   readonly comments = signal<Comment[]>([]);
   readonly commentBody = new FormControl('', { nonNullable: true });
+  readonly commentForm = new FormGroup({ body: this.commentBody });
   readonly commentErrors = signal<Errors | null>(null);
   readonly isSubmittingComment = signal(false);
 
