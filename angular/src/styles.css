@@ -1,0 +1,2 @@
+/* Conduit theme is loaded from theme.css (same file the legacy app serves as assets/main.css). */
+app-article-list, app-article-preview, app-list-pagination, app-list-errors { display: block; }
