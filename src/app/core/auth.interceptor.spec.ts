@@ -56,4 +56,14 @@ describe('authInterceptor', () => {
     expect(jwt.get()).toBeNull();
     expect(reload).toHaveBeenCalledOnce();
   });
+
+  it('passes a 401 from an unauthenticated request (e.g. wrong login) through without reloading', () => {
+    const error = vi.fn();
+    http.post(`${API}/users/login`, {}).subscribe({ error });
+    controller
+      .expectOne(`${API}/users/login`)
+      .flush({ errors: { credentials: ['invalid'] } }, { status: 401, statusText: 'Unauthorized' });
+    expect(error).toHaveBeenCalledOnce();
+    expect(reload).not.toHaveBeenCalled();
+  });
 });

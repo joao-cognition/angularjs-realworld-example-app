@@ -11,14 +11,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const location = inject(DOCUMENT).location;
 
   const token = jwt.get();
-  const request =
-    token && req.url.startsWith(api)
-      ? req.clone({ setHeaders: { Authorization: `Token ${token}` } })
-      : req;
+  const sendsToken = !!token && req.url.startsWith(api);
+  const request = sendsToken ? req.clone({ setHeaders: { Authorization: `Token ${token}` } }) : req;
 
   return next(request).pipe(
     catchError((err: unknown) => {
-      if (err instanceof HttpErrorResponse && err.status === 401) {
+      if (err instanceof HttpErrorResponse && err.status === 401 && sendsToken) {
         jwt.destroy();
         location.reload();
       }
