@@ -17,7 +17,8 @@ import { FollowBtnComponent } from '../../shared/follow-btn.component';
           <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article().slug]">
             <i class="ion-edit"></i> Edit Article
           </a>
-
+          <!-- Legacy kept the whitespace between the buttons, which renders as a gap. -->
+          &ngsp;
           <button
             class="btn btn-sm btn-outline-danger"
             [class.disabled]="isDeleting()"
@@ -29,6 +30,7 @@ import { FollowBtnComponent } from '../../shared/follow-btn.component';
       } @else {
         <span>
           <app-follow-btn [user]="article().author" (toggled)="onFollow($event)" />
+          &ngsp;
           <app-favorite-btn [article]="article()" (toggled)="onFavorite($event)">
             {{ article().favorited ? 'Unfavorite' : 'Favorite' }} Article
             <span class="counter">({{ article().favoritesCount }})</span>
