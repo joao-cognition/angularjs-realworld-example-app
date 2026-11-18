@@ -2,151 +2,187 @@
   "article.spec.ts › seed article for anonymous readers": {
     "file": "article.spec.ts",
     "title": "seed article for anonymous readers",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "article.spec.ts › author sees markdown, edit and delete": {
     "file": "article.spec.ts",
     "title": "author sees markdown, edit and delete",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "article.spec.ts › reader posts and deletes a comment": {
     "file": "article.spec.ts",
     "title": "reader posts and deletes a comment",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "article.spec.ts › favorite and follow from the article page": {
     "file": "article.spec.ts",
     "title": "favorite and follow from the article page",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "article.spec.ts › unknown slug goes home": {
     "file": "article.spec.ts",
     "title": "unknown slug goes home",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "auth.spec.ts › sign up page and new account": {
     "file": "auth.spec.ts",
     "title": "sign up page and new account",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "auth.spec.ts › sign in page and existing account": {
     "file": "auth.spec.ts",
     "title": "sign in page and existing account",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "auth.spec.ts › wrong password keeps the user signed out": {
     "file": "auth.spec.ts",
     "title": "wrong password keeps the user signed out",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "auth.spec.ts › blank sign up shows server errors": {
     "file": "auth.spec.ts",
     "title": "blank sign up shows server errors",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "auth.spec.ts › signed-in user is sent home from sign in": {
     "file": "auth.spec.ts",
     "title": "signed-in user is sent home from sign in",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "editor.spec.ts › publish, edit and delete an article": {
     "file": "editor.spec.ts",
     "title": "publish, edit and delete an article",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
+  },
+  "editor.spec.ts › edit loads your article and saves the changes": {
+    "file": "editor.spec.ts",
+    "title": "edit loads your article and saves the changes",
+    "legacy": "pass",
+    "angular": "pass"
   },
   "editor.spec.ts › missing fields show server errors": {
     "file": "editor.spec.ts",
     "title": "missing fields show server errors",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "editor.spec.ts › anonymous users are sent home": {
     "file": "editor.spec.ts",
     "title": "anonymous users are sent home",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "editor.spec.ts › cannot edit someone else's article": {
     "file": "editor.spec.ts",
     "title": "cannot edit someone else's article",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "home.spec.ts › global feed, banner and popular tags": {
     "file": "home.spec.ts",
     "title": "global feed, banner and popular tags",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "home.spec.ts › pagination": {
     "file": "home.spec.ts",
     "title": "pagination",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "home.spec.ts › tag filter": {
     "file": "home.spec.ts",
     "title": "tag filter",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "home.spec.ts › signed-in user starts on Your Feed": {
     "file": "home.spec.ts",
     "title": "signed-in user starts on Your Feed",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "home.spec.ts › favorite as anonymous goes to sign up": {
     "file": "home.spec.ts",
     "title": "favorite as anonymous goes to sign up",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "layout.spec.ts › anonymous header, footer and title": {
     "file": "layout.spec.ts",
     "title": "anonymous header, footer and title",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "layout.spec.ts › signed-in header": {
     "file": "layout.spec.ts",
     "title": "signed-in header",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "layout.spec.ts › unknown route falls back to home": {
     "file": "layout.spec.ts",
     "title": "unknown route falls back to home",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "profile.spec.ts › another user's profile, articles and follow": {
     "file": "profile.spec.ts",
     "title": "another user's profile, articles and follow",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "profile.spec.ts › favorite shows up on the Favorited Articles tab": {
     "file": "profile.spec.ts",
     "title": "favorite shows up on the Favorited Articles tab",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "profile.spec.ts › own profile lists own articles and empty favorites": {
     "file": "profile.spec.ts",
     "title": "own profile lists own articles and empty favorites",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "profile.spec.ts › anonymous follow goes to sign up": {
     "file": "profile.spec.ts",
     "title": "anonymous follow goes to sign up",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "profile.spec.ts › unknown profile goes home": {
     "file": "profile.spec.ts",
     "title": "unknown profile goes home",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "settings.spec.ts › form is prefilled and saves bio": {
     "file": "settings.spec.ts",
     "title": "form is prefilled and saves bio",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "settings.spec.ts › logout returns to anonymous header": {
     "file": "settings.spec.ts",
     "title": "logout returns to anonymous header",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   },
   "settings.spec.ts › anonymous users are sent home": {
     "file": "settings.spec.ts",
     "title": "anonymous users are sent home",
-    "legacy": "pass"
+    "legacy": "pass",
+    "angular": "pass"
   }
 }

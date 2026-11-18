@@ -104,12 +104,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2411,
+                      "duration": 2157,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:13.890Z",
+                      "startTime": "2026-11-18T08:25:44.700Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -138,12 +138,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2213,
+                      "duration": 2117,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:16.378Z",
+                      "startTime": "2026-11-18T08:25:46.935Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -172,12 +172,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3158,
+                      "duration": 2889,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:18.598Z",
+                      "startTime": "2026-11-18T08:25:49.062Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -206,12 +206,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2758,
+                      "duration": 2737,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:21.766Z",
+                      "startTime": "2026-11-18T08:25:51.957Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -240,12 +240,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1073,
+                      "duration": 1044,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:24.530Z",
+                      "startTime": "2026-11-18T08:25:54.700Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -254,6 +254,176 @@
                 }
               ],
               "id": "36943161b78213d9758d-2193bdbef3da9cad6375",
+              "file": "article.spec.ts",
+              "line": 79,
+              "column": 7
+            },
+            {
+              "title": "seed article for anonymous readers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:45.759Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "36943161b78213d9758d-709b6d2f83f8a892ceda",
+              "file": "article.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "author sees markdown, edit and delete",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2369,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:47.949Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "36943161b78213d9758d-ebe31dd39286c14d17e2",
+              "file": "article.spec.ts",
+              "line": 25,
+              "column": 7
+            },
+            {
+              "title": "reader posts and deletes a comment",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3333,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:50.325Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "36943161b78213d9758d-2ae45ae77e346ac60e4c",
+              "file": "article.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "favorite and follow from the article page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2894,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:53.665Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "36943161b78213d9758d-734eaa1c01cbff2b5e3b",
+              "file": "article.spec.ts",
+              "line": 64,
+              "column": 7
+            },
+            {
+              "title": "unknown slug goes home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1081,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:56.565Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "36943161b78213d9758d-64cefe0d3d0e9923840a",
               "file": "article.spec.ts",
               "line": 79,
               "column": 7
@@ -291,12 +461,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1742,
+                      "duration": 1825,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:25.614Z",
+                      "startTime": "2026-11-18T08:25:55.753Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -325,12 +495,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2592,
+                      "duration": 2298,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:27.362Z",
+                      "startTime": "2026-11-18T08:25:57.588Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -359,12 +529,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2036,
+                      "duration": 1742,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:29.962Z",
+                      "startTime": "2026-11-18T08:25:59.892Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -393,12 +563,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1165,
+                      "duration": 1139,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:32.007Z",
+                      "startTime": "2026-11-18T08:26:01.639Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -426,69 +596,191 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 15480,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\u001b[22m\n\n    at signInAs (/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts:71:73)\n    at /home/ubuntu/repos/angularjs-realworld-example-app/parity/specs/auth.spec.ts:70:5",
-                        "location": {
-                          "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                          "column": 73,
-                          "line": 71
-                        },
-                        "snippet": "   at ../helpers/app.ts:71\n\n  69 |   await page.goto(route(testInfo, logical));\n  70 |   await page.reload();\n> 71 |   await expect(header(page).getByRole('link', { name: user.username })).toBeVisible();\n     |                                                                         ^\n  72 | }\n  73 |\n  74 | export function header(page: Page) {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                            "column": 73,
-                            "line": 71
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'authedmwlu7xmgiqp5' })\u001b[22m\n\n\n   at ../helpers/app.ts:71\n\n  69 |   await page.goto(route(testInfo, logical));\n  70 |   await page.reload();\n> 71 |   await expect(header(page).getByRole('link', { name: user.username })).toBeVisible();\n     |                                                                         ^\n  72 | }\n  73 |\n  74 | export function header(page: Page) {\n    at signInAs (/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts:71:73)\n    at /home/ubuntu/repos/angularjs-realworld-example-app/parity/specs/auth.spec.ts:70:5"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-18T08:06:33.180Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/test-results/auth-auth-signed-in-user-is-sent-home-from-sign-in-legacy/error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/test-results/auth-auth-signed-in-user-is-sent-home-from-sign-in-legacy/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                        "column": 73,
-                        "line": 71
-                      }
-                    },
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1740,
+                      "duration": 1335,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
-                      "retry": 1,
-                      "startTime": "2026-11-18T08:06:49.524Z",
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:02.784Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "flaky"
+                  "status": "expected"
                 }
               ],
               "id": "d748ac400d08b85935ef-df1a4b9349daf482fb3a",
+              "file": "auth.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "sign up page and new account",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1700,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:57.655Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-9098cc4f41739291b627",
+              "file": "auth.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "sign in page and existing account",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2351,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:59.361Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-4a52208bf68e765dae30",
+              "file": "auth.spec.ts",
+              "line": 21,
+              "column": 7
+            },
+            {
+              "title": "wrong password keeps the user signed out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1696,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:01.720Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-e9c77b1720cd1a8caa89",
+              "file": "auth.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "blank sign up shows server errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1152,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:03.422Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-1c66b09c2e3327f11641",
+              "file": "auth.spec.ts",
+              "line": 57,
+              "column": 7
+            },
+            {
+              "title": "signed-in user is sent home from sign in",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1466,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:04.580Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-47b62566190f8cd6d554",
               "file": "auth.spec.ts",
               "line": 68,
               "column": 7
@@ -523,15 +815,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4536,
+                      "duration": 4464,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:51.333Z",
+                      "startTime": "2026-11-18T08:26:04.128Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -542,6 +834,40 @@
               "id": "d2f56d7d370f0ba02e91-4addecc89e9147c84deb",
               "file": "editor.spec.ts",
               "line": 5,
+              "column": 7
+            },
+            {
+              "title": "edit loads your article and saves the changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "legacy",
+                  "projectName": "legacy",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3115,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:08.598Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-3ada7a6a83d62ec20b54",
+              "file": "editor.spec.ts",
+              "line": 42,
               "column": 7
             },
             {
@@ -557,15 +883,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1824,
+                      "duration": 1820,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:55.876Z",
+                      "startTime": "2026-11-18T08:26:11.719Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -575,7 +901,7 @@
               ],
               "id": "d2f56d7d370f0ba02e91-58c394960f14d1851d20",
               "file": "editor.spec.ts",
-              "line": 42,
+              "line": 65,
               "column": 7
             },
             {
@@ -591,15 +917,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 210,
+                      "duration": 297,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:57.706Z",
+                      "startTime": "2026-11-18T08:26:13.545Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -609,7 +935,7 @@
               ],
               "id": "d2f56d7d370f0ba02e91-38c8b16a55ace2265422",
               "file": "editor.spec.ts",
-              "line": 51,
+              "line": 74,
               "column": 7
             },
             {
@@ -625,15 +951,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2076,
+                      "duration": 2058,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:06:57.923Z",
+                      "startTime": "2026-11-18T08:26:13.849Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -643,7 +969,177 @@
               ],
               "id": "d2f56d7d370f0ba02e91-0b9071be8e9184b2d70a",
               "file": "editor.spec.ts",
-              "line": 56,
+              "line": 79,
+              "column": 7
+            },
+            {
+              "title": "publish, edit and delete an article",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4547,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:06.057Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-14c4874e5a9e99007b48",
+              "file": "editor.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "edit loads your article and saves the changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3247,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:10.609Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-530858cf8d653b04912a",
+              "file": "editor.spec.ts",
+              "line": 42,
+              "column": 7
+            },
+            {
+              "title": "missing fields show server errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1484,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:13.862Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-f98ec4c34b0c5c59cf12",
+              "file": "editor.spec.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "anonymous users are sent home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 220,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:15.353Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-a60c614639cf897e2314",
+              "file": "editor.spec.ts",
+              "line": 74,
+              "column": 7
+            },
+            {
+              "title": "cannot edit someone else's article",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2309,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:15.578Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d2f56d7d370f0ba02e91-fc78d8c1fe58476bf998",
+              "file": "editor.spec.ts",
+              "line": 79,
               "column": 7
             }
           ]
@@ -676,15 +1172,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1551,
+                      "duration": 1894,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:00.008Z",
+                      "startTime": "2026-11-18T08:26:15.916Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -710,15 +1206,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4961,
+                      "duration": 4349,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:01.566Z",
+                      "startTime": "2026-11-18T08:26:17.817Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -744,15 +1240,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1940,
+                      "duration": 1837,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:06.534Z",
+                      "startTime": "2026-11-18T08:26:22.172Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -778,15 +1274,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2004,
+                      "duration": 1736,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:08.482Z",
+                      "startTime": "2026-11-18T08:26:24.016Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -812,15 +1308,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1198,
+                      "duration": 1159,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:10.493Z",
+                      "startTime": "2026-11-18T08:26:25.757Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -829,6 +1325,176 @@
                 }
               ],
               "id": "d318381359a9b96acb1e-b765155b3189698e1a69",
+              "file": "home.spec.ts",
+              "line": 88,
+              "column": 7
+            },
+            {
+              "title": "global feed, banner and popular tags",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1449,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:17.896Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d318381359a9b96acb1e-436181c3d13ee03a5f27",
+              "file": "home.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "pagination",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4384,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:19.351Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d318381359a9b96acb1e-a36e685d902a7c307379",
+              "file": "home.spec.ts",
+              "line": 30,
+              "column": 7
+            },
+            {
+              "title": "tag filter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1753,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:23.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d318381359a9b96acb1e-5eb572b596449ee32eb4",
+              "file": "home.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "signed-in user starts on Your Feed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1943,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:25.500Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d318381359a9b96acb1e-350b3bec026ef1f019a3",
+              "file": "home.spec.ts",
+              "line": 75,
+              "column": 7
+            },
+            {
+              "title": "favorite as anonymous goes to sign up",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1257,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:27.456Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d318381359a9b96acb1e-2aae89b6d983840b4d6a",
               "file": "home.spec.ts",
               "line": 88,
               "column": 7
@@ -863,15 +1529,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 325,
+                      "duration": 252,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:11.703Z",
+                      "startTime": "2026-11-18T08:26:26.923Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -897,15 +1563,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2119,
+                      "duration": 1847,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:12.034Z",
+                      "startTime": "2026-11-18T08:26:27.180Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -931,15 +1597,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 265,
+                      "duration": 241,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:14.160Z",
+                      "startTime": "2026-11-18T08:26:29.033Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -948,6 +1614,108 @@
                 }
               ],
               "id": "9f98fd8c8d1538f5ebbb-58427e119e371e2aa502",
+              "file": "layout.spec.ts",
+              "line": 29,
+              "column": 7
+            },
+            {
+              "title": "anonymous header, footer and title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:28.722Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9f98fd8c8d1538f5ebbb-b49c1853f2c78ed76df6",
+              "file": "layout.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "signed-in header",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1853,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:28.989Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9f98fd8c8d1538f5ebbb-d6425a6231fd2ca72759",
+              "file": "layout.spec.ts",
+              "line": 18,
+              "column": 7
+            },
+            {
+              "title": "unknown route falls back to home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 280,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:30.848Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9f98fd8c8d1538f5ebbb-7a5bb6383d36187b8337",
               "file": "layout.spec.ts",
               "line": 29,
               "column": 7
@@ -982,15 +1750,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3399,
+                      "duration": 3386,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:14.438Z",
+                      "startTime": "2026-11-18T08:26:29.286Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1016,15 +1784,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3700,
+                      "duration": 3618,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:17.844Z",
+                      "startTime": "2026-11-18T08:26:32.678Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1050,15 +1818,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2356,
+                      "duration": 2257,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:21.551Z",
+                      "startTime": "2026-11-18T08:26:36.303Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1084,15 +1852,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1234,
+                      "duration": 1184,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:23.914Z",
+                      "startTime": "2026-11-18T08:26:38.566Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1118,15 +1886,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1043,
+                      "duration": 1030,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:25.154Z",
+                      "startTime": "2026-11-18T08:26:39.755Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1135,6 +1903,176 @@
                 }
               ],
               "id": "e8b79b4ee550a37632f1-8350829b9dade08780ec",
+              "file": "profile.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "another user's profile, articles and follow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3619,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:31.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8b79b4ee550a37632f1-a70b383da81914cf43e4",
+              "file": "profile.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "favorite shows up on the Favorited Articles tab",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4312,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:34.763Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8b79b4ee550a37632f1-856a11882e2fccfc66e3",
+              "file": "profile.spec.ts",
+              "line": 31,
+              "column": 7
+            },
+            {
+              "title": "own profile lists own articles and empty favorites",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2814,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:39.081Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8b79b4ee550a37632f1-7d9010dba2ffb8a3b521",
+              "file": "profile.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "anonymous follow goes to sign up",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1198,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:41.901Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8b79b4ee550a37632f1-cae2a5c419da7497210d",
+              "file": "profile.spec.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "unknown profile goes home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1067,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:43.106Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8b79b4ee550a37632f1-7380f5c528a707ea5df9",
               "file": "profile.spec.ts",
               "line": 76,
               "column": 7
@@ -1169,15 +2107,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2709,
+                      "duration": 2639,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:26.205Z",
+                      "startTime": "2026-11-18T08:26:40.792Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1203,68 +2141,20 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 15541,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\u001b[22m\n\n    at signInAs (/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts:71:73)\n    at /home/ubuntu/repos/angularjs-realworld-example-app/parity/specs/settings.spec.ts:22:5",
-                        "location": {
-                          "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                          "column": 73,
-                          "line": 71
-                        },
-                        "snippet": "   at ../helpers/app.ts:71\n\n  69 |   await page.goto(route(testInfo, logical));\n  70 |   await page.reload();\n> 71 |   await expect(header(page).getByRole('link', { name: user.username })).toBeVisible();\n     |                                                                         ^\n  72 | }\n  73 |\n  74 | export function header(page: Page) {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                            "column": 73,
-                            "line": 71
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav.navbar').getByRole('link', { name: 'logoutmwlu94mqu7yr' })\u001b[22m\n\n\n   at ../helpers/app.ts:71\n\n  69 |   await page.goto(route(testInfo, logical));\n  70 |   await page.reload();\n> 71 |   await expect(header(page).getByRole('link', { name: user.username })).toBeVisible();\n     |                                                                         ^\n  72 | }\n  73 |\n  74 | export function header(page: Page) {\n    at signInAs (/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts:71:73)\n    at /home/ubuntu/repos/angularjs-realworld-example-app/parity/specs/settings.spec.ts:22:5"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-18T08:07:28.920Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/test-results/settings-settings-logout-returns-to-anonymous-header-legacy/error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/test-results/settings-settings-logout-returns-to-anonymous-header-legacy/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/home/ubuntu/repos/angularjs-realworld-example-app/parity/helpers/app.ts",
-                        "column": 73,
-                        "line": 71
-                      }
-                    },
-                    {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1785,
+                      "duration": 1353,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
-                      "retry": 1,
-                      "startTime": "2026-11-18T08:07:45.683Z",
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:26:43.438Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "flaky"
+                  "status": "expected"
                 }
               ],
               "id": "d877ffdf71ec720167ae-effc47b766ed51bb049c",
@@ -1285,15 +2175,15 @@
                   "projectName": "legacy",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 227,
+                      "duration": 203,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-18T08:07:47.533Z",
+                      "startTime": "2026-11-18T08:26:44.796Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1305,6 +2195,108 @@
               "file": "settings.spec.ts",
               "line": 29,
               "column": 7
+            },
+            {
+              "title": "form is prefilled and saves bio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2514,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:44.182Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d877ffdf71ec720167ae-695039e8491d25c5c653",
+              "file": "settings.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "logout returns to anonymous header",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1088,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:46.702Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d877ffdf71ec720167ae-8b7dc6add4017fbc7f13",
+              "file": "settings.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "anonymous users are sent home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "angular",
+                  "projectName": "angular",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 224,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T08:27:47.799Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d877ffdf71ec720167ae-f6c13072f459647e5b08",
+              "file": "settings.spec.ts",
+              "line": 29,
+              "column": 7
             }
           ]
         }
@@ -1313,11 +2305,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-18T08:06:13.069Z",
-    "duration": 94727.644,
-    "expected": 28,
+    "startTime": "2026-11-18T08:25:43.724Z",
+    "duration": 124351.632,
+    "expected": 62,
     "skipped": 0,
     "unexpected": 0,
-    "flaky": 2
+    "flaky": 0
   }
 }
