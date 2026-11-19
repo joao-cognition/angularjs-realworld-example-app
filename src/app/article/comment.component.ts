@@ -3,10 +3,11 @@ import { ChangeDetectionStrategy, Component, computed, inject, input, output } f
 import { RouterLink } from '@angular/router';
 import { Comment } from '../core/models';
 import { UserService } from '../core/user.service';
+import { AvatarPipe } from '../shared/avatar.pipe';
 
 @Component({
   selector: 'app-comment',
-  imports: [RouterLink, DatePipe],
+  imports: [RouterLink, DatePipe, AvatarPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="card">
@@ -15,7 +16,7 @@ import { UserService } from '../core/user.service';
       </div>
       <div class="card-footer">
         <a class="comment-author" [routerLink]="['/@' + comment().author.username]">
-          <img [src]="comment().author.image" class="comment-author-img" />
+          <img [src]="comment().author.image | avatar" class="comment-author-img" />
         </a>
         &nbsp;
         <a class="comment-author" [routerLink]="['/@' + comment().author.username]">

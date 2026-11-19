@@ -21,10 +21,12 @@ import { MarkdownPipe } from '../shared/markdown.pipe';
 import { ShowAuthedDirective } from '../shared/show-authed.directive';
 import { ArticleActionsComponent } from './article-actions.component';
 import { CommentComponent } from './comment.component';
+import { AvatarPipe } from '../shared/avatar.pipe';
 
 @Component({
   selector: 'app-article',
   imports: [
+    AvatarPipe,
     FormsModule,
     RouterLink,
     ArticleActionsComponent,
