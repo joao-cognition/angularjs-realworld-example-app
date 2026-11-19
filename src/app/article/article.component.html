@@ -1,0 +1,66 @@
+<div class="article-page">
+  <!-- Banner for article title, action buttons -->
+  <div class="banner">
+    <div class="container">
+      <h1>{{ current().title }}</h1>
+      <div class="article-meta">
+        <app-article-actions [(article)]="current" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main view. Contains article html and comments -->
+  <div class="container page">
+    <div class="row article-content">
+      <div class="col-xs-12">
+        <div [innerHTML]="current().body | markdown"></div>
+        <ul class="tag-list">
+          @for (tag of current().tagList; track tag) {
+            <li class="tag-default tag-pill tag-outline">{{ tag }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="article-actions">
+      <app-article-actions [(article)]="current" />
+    </div>
+
+    <!-- Comments section -->
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div *appShowAuthed="true">
+          <app-list-errors [errors]="commentErrors()" />
+          <form class="card comment-form" (ngSubmit)="addComment()">
+            <fieldset [disabled]="commentSubmitting()">
+              <div class="card-block">
+                <textarea
+                  class="form-control"
+                  placeholder="Write a comment..."
+                  rows="3"
+                  name="body"
+                  [(ngModel)]="commentBody"
+                ></textarea>
+              </div>
+              <div class="card-footer">
+                <img [src]="currentUser()?.image" class="comment-author-img" />
+                <button class="btn btn-sm btn-primary" type="submit">Post Comment</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div *appShowAuthed="false">
+          <a routerLink="/login">Sign in</a> or <a routerLink="/register">sign up</a> to add comments
+          on this article.
+        </div>
+
+        @for (comment of comments(); track comment.id) {
+          <app-comment [comment]="comment" (delete)="deleteComment(comment.id)" />
+        }
+      </div>
+    </div>
+  </div>
+</div>
