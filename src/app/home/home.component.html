@@ -1,0 +1,75 @@
+<div class="home-page">
+  <!-- Splash banner that only shows when not logged in -->
+  <div class="banner" *appShowAuthed="false">
+    <div class="container">
+      <h1 class="logo-font">{{ appName | lowercase }}</h1>
+      <p>A place to share your knowledge.</p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <!-- Main view - contains tabs & article list -->
+      <div class="col-md-9">
+        <div class="feed-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item" *appShowAuthed="true">
+              <a
+                href=""
+                class="nav-link"
+                [class.active]="listConfig().type === 'feed'"
+                (click)="$event.preventDefault(); changeList({ type: 'feed' })"
+              >
+                Your Feed
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href=""
+                class="nav-link"
+                [class.active]="listConfig().type === 'all' && !listConfig().filters"
+                (click)="$event.preventDefault(); changeList({ type: 'all' })"
+              >
+                Global Feed
+              </a>
+            </li>
+            @if (listConfig().filters?.tag; as tag) {
+              <li class="nav-item">
+                <a href="" class="nav-link active" (click)="$event.preventDefault()">
+                  <i class="ion-pound"></i> {{ tag }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <app-article-list [limit]="10" [config]="listConfig()" />
+      </div>
+
+      <!-- Sidebar where popular tags are listed -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <p>Popular Tags</p>
+          @if (tags(); as tags) {
+            <div class="tag-list">
+              @for (tagName of tags; track tagName) {
+                <a
+                  href=""
+                  class="tag-default tag-pill"
+                  (click)="$event.preventDefault(); changeList({ type: 'all', filters: { tag: tagName } })"
+                >
+                  {{ tagName }}
+                </a>
+              }
+            </div>
+            @if (!tags.length) {
+              <div class="post-preview">No tags are here... yet.</div>
+            }
+          } @else {
+            <div>Loading tags...</div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

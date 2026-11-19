@@ -1,0 +1,51 @@
+<div class="profile-page">
+  <!-- User's basic info & action buttons -->
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <img [src]="current().image | avatar" class="user-img" />
+          <h4>{{ current().username }}</h4>
+          <p>{{ current().bio }}</p>
+
+          @if (isUser()) {
+            <a routerLink="/settings" class="btn btn-sm btn-outline-secondary action-btn">
+              <i class="ion-gear-a"></i> Edit Profile Settings
+            </a>
+          } @else {
+            <app-follow-btn [(user)]="current" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container where User's posts & favs are listed w/ toggle tabs -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="articles-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['/@' + current().username]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                My Articles
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/@' + current().username, 'favorites']" routerLinkActive="active">
+                Favorited Articles
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <router-outlet />
+      </div>
+    </div>
+  </div>
+</div>
