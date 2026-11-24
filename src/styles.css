@@ -1,0 +1,6 @@
+/* Global styles. The RealWorld theme is in theme.css. */
+.mod-options i,
+.tag-pill i,
+.page-item {
+  cursor: pointer;
+}

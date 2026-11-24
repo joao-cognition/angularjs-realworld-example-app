@@ -1,24 +1,33 @@
-# ![Angular 1.5+ ES6 & Component API Example App](project-logo.png)
+# ![Conduit](project-logo.png)
 
-> Example Angular 1.5+ (ES6 + Components) codebase that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
-
-View the **[demo application](https://angularjs.realworld.io)** or **[learn how to build the application from scratch](https://thinkster.io/angularjs-es6-tutorial)**!
+> [RealWorld](https://github.com/gothinkster/realworld) "Conduit" frontend, rewritten from AngularJS 1.5 to **Angular 21** (standalone components, signals, `@if`/`@for` control flow, functional guards/resolvers/interceptors).
 
 # Getting started
 
-1. Clone repo
-2. `npm install`
-3. `gulp`
+Requires Node `^20.19`, `^22.12` or `>=24`.
 
-Make sure you have gulp installed globally (`npm install -g gulp`)
+```bash
+npm install
+npm start          # ng serve on http://localhost:4200
+npm run build      # production build into dist/conduit
+npm test           # unit tests (Vitest) — add --watch=false for a single run
+```
 
 ### Making requests to the backend API
 
-For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+The app talks to the public RealWorld API at `https://api.realworld.show/api`. To use another backend (e.g. `http://localhost:3000/api`), change `apiUrl` in `src/environments/environment.ts`; it is provided to the app through the `APP_CONSTANTS` injection token (`src/app/core/app.constants.ts`).
 
-The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
+### Layout
 
-If you want to change the API URL to a local server, simply edit `src/js/config/app.constants.js` and change `api` to the local server's URL (i.e. `localhost:3000/api`)
+| Path                    | Contents                                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `src/app/app.routes.ts` | Routes (ported from the UI-Router states)                                                                                |
+| `src/app/core/`         | Services (`UserService`, `JwtService`, `ArticlesService`, ...), auth interceptor, guards, resolvers, page-title listener |
+| `src/app/layout/`       | Header, footer and the layout shell                                                                                      |
+| `src/app/shared/`       | Article list/preview/meta, pagination, favorite/follow buttons, list-errors, `*appShowAuthed`, markdown pipe             |
+| `src/app/pages/`        | Home, article, auth, editor, profile, settings                                                                           |
+
+URLs keep the legacy hash form (`/#/article/:slug`, `/#/@username/favorites`, ...), so existing links keep working.
 
 <br />
 
