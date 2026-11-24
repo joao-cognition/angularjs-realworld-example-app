@@ -10,6 +10,8 @@ Standalone-component / signals rewrite of the AngularJS 1.5 app in `../src/js` (
 | Unit tests (Vitest) | `npx ng test --watch=false` |
 | Production build | `npx ng build` |
 
+Routes use path URLs (old `/#/...` links are rewritten on load), so any static host must serve `index.html` for unknown paths (SPA fallback), otherwise refreshing `/article/:slug` or `/@user` 404s.
+
 The API base URL lives in `src/environments/environment*.ts`; `--configuration local` points the app at `http://localhost:8080`.
 
 ## E2E (`../e2e`)
