@@ -10,7 +10,7 @@ export class CommentsService {
 
   add(slug: string, body: string): Observable<Comment> {
     return this.http
-      .post<{ comment: Comment }>(`${AppConstants.api}/articles/${slug}/comments`, {
+      .post<{ comment: Comment }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}/comments`, {
         comment: { body },
       })
       .pipe(map((res) => res.comment));
@@ -18,11 +18,11 @@ export class CommentsService {
 
   getAll(slug: string): Observable<Comment[]> {
     return this.http
-      .get<{ comments: Comment[] }>(`${AppConstants.api}/articles/${slug}/comments`)
+      .get<{ comments: Comment[] }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}/comments`)
       .pipe(map((res) => res.comments));
   }
 
   destroy(commentId: number, articleSlug: string): Observable<unknown> {
-    return this.http.delete(`${AppConstants.api}/articles/${articleSlug}/comments/${commentId}`);
+    return this.http.delete(`${AppConstants.api}/articles/${encodeURIComponent(articleSlug)}/comments/${commentId}`);
   }
 }

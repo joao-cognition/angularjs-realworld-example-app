@@ -27,31 +27,31 @@ export class ArticlesService {
       return throwError(() => new Error('Article slug is empty'));
     }
     return this.http
-      .get<{ article: Article }>(`${AppConstants.api}/articles/${slug}`)
+      .get<{ article: Article }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}`)
       .pipe(map((res) => res.article));
   }
 
   destroy(slug: string): Observable<unknown> {
-    return this.http.delete(`${AppConstants.api}/articles/${slug}`);
+    return this.http.delete(`${AppConstants.api}/articles/${encodeURIComponent(slug)}`);
   }
 
   save(draft: ArticleDraft): Observable<Article> {
     const { slug, ...article } = draft;
     const request = slug
-      ? this.http.put<{ article: Article }>(`${AppConstants.api}/articles/${slug}`, { article })
+      ? this.http.put<{ article: Article }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}`, { article })
       : this.http.post<{ article: Article }>(`${AppConstants.api}/articles`, { article });
     return request.pipe(map((res) => res.article));
   }
 
   favorite(slug: string): Observable<Article> {
     return this.http
-      .post<{ article: Article }>(`${AppConstants.api}/articles/${slug}/favorite`, {})
+      .post<{ article: Article }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}/favorite`, {})
       .pipe(map((res) => res.article));
   }
 
   unfavorite(slug: string): Observable<Article> {
     return this.http
-      .delete<{ article: Article }>(`${AppConstants.api}/articles/${slug}/favorite`)
+      .delete<{ article: Article }>(`${AppConstants.api}/articles/${encodeURIComponent(slug)}/favorite`)
       .pipe(map((res) => res.article));
   }
 }
