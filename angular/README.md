@@ -19,10 +19,9 @@ The suite runs against a local RealWorld backend, e.g. [spring-boot-realworld-ex
 
 ```bash
 # backend (Java 11)
-JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ./gradlew bootRun \
-  --args='--spring.datasource.url=jdbc:sqlite:dev.db?busy_timeout=15000&journal_mode=WAL'
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ./gradlew bootRun
 # app
 cd angular && npx ng serve --port 4200 --configuration local
-# tests (global setup seeds 12 demo articles)
+# tests (global setup seeds 12 demo articles; 1 worker by default because the backend's SQLite locks on concurrent writes)
 cd e2e && npm install && npx playwright install chromium && npx playwright test --project=angular
 ```
