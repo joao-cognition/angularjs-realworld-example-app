@@ -16,4 +16,11 @@ describe('MarkdownPipe', () => {
   it('handles empty input', () => {
     expect(pipe.transform(undefined)).toBe('');
   });
+
+  it('keeps task-list state visible as text', () => {
+    const html = pipe.transform('- [x] done\n- [ ] todo');
+    expect(html).toContain('[x] done');
+    expect(html).toContain('[ ] todo');
+    expect(html).not.toContain('<input');
+  });
 });

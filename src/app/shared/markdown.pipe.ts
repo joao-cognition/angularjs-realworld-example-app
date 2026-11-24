@@ -9,6 +9,8 @@ const markdown = new Marked({
   async: false,
   renderer: {
     html: ({ text }) => escapeHtml(text),
+    // Angular's sanitizer strips <input>, so show task-list markers as text like the legacy marked 0.3 did.
+    checkbox: ({ checked }) => (checked ? '[x] ' : '[ ] '),
   },
 });
 
