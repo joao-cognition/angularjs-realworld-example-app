@@ -1,6 +1,6 @@
 import { Component, computed, inject, input, linkedSignal, signal } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
-import { switchMap, tap } from 'rxjs';
+import { catchError, of, switchMap, tap } from 'rxjs';
 import { ArticlesService } from '../core/articles.service';
 import { Article, ArticleListConfig } from '../core/models';
 import { ArticlePreviewComponent } from './article-preview.component';
@@ -59,10 +59,12 @@ export class ArticleListComponent {
           }
         }),
         switchMap(({ config, limit, page }) =>
-          this.articles.query({
-            type: config.type,
-            filters: { ...config.filters, limit, offset: limit * (page - 1) },
-          }),
+          this.articles
+            .query({
+              type: config.type,
+              filters: { ...config.filters, limit, offset: limit * (page - 1) },
+            })
+            .pipe(catchError(() => of({ articles: [], articlesCount: 0 }))),
         ),
         takeUntilDestroyed(),
       )
