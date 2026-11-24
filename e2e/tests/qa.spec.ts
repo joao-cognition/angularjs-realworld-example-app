@@ -1,4 +1,12 @@
-import { apiCreateArticle, apiRegister, expect, route, signInWithToken, test } from './helpers';
+import {
+  apiCreateArticle,
+  apiRegister,
+  expect,
+  expectRoute,
+  route,
+  signInWithToken,
+  test,
+} from './helpers';
 
 /** Manual-QA checks automated: every page renders, no console errors, no AngularJS left behind. */
 test.describe('QA sweep (Angular port only)', () => {
@@ -39,6 +47,7 @@ test.describe('QA sweep (Angular port only)', () => {
       `/@${user.username}`,
     ]) {
       await page.goto(route(info, path));
+      await expectRoute(page, info, path);
       await expect(
         page.locator('nav.navbar').getByRole('link', { name: user.username }),
       ).toBeVisible();

@@ -19,7 +19,8 @@ test.describe('Settings', () => {
     await expect(page.getByPlaceholder('Email')).toHaveValue(user.email);
 
     const bio = `I test things ${Date.now()}`;
-    const image = 'https://api.realworld.show/images/smiley-cyrus.jpeg?e2e=1';
+    // Inline image: a remote URL that fails would be swapped by the avatar fallback and flake the src checks.
+    const image = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'/%3E`;
     await page.getByPlaceholder('Short bio about you').fill(bio);
     await page.getByPlaceholder('URL of profile picture').fill(image);
     await page.getByRole('button', { name: 'Update Settings' }).click();
