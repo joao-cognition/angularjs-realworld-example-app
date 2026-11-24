@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, signal } from '@angular/core';
+import { Component, effect, inject, input, signal, untracked } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArticlesService } from '../../core/articles.service';
@@ -76,7 +76,7 @@ import { ListErrorsComponent } from '../../shared/list-errors.component';
     </div>
   `,
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent {
   /** Resolved by `editorArticleResolver`; `null` when creating a new article. */
   readonly article = input<Article | null>(null);
 
@@ -93,16 +93,22 @@ export class EditorComponent implements OnInit {
     body: new FormControl('', { nonNullable: true }),
   });
 
-  ngOnInit(): void {
-    const article = this.article();
-    if (article) {
-      this.form.setValue({
-        title: article.title,
-        description: article.description,
-        body: article.body,
+  constructor() {
+    // The router reuses this component when moving between /editor/:slug URLs, so reset the draft per article.
+    effect(() => {
+      const article = this.article();
+      untracked(() => {
+        this.form.setValue({
+          title: article?.title ?? '',
+          description: article?.description ?? '',
+          body: article?.body ?? '',
+        });
+        this.tagList.set([...(article?.tagList ?? [])]);
+        this.tagField = '';
+        this.errors.set(null);
+        this.isSubmitting.set(false);
       });
-      this.tagList.set([...article.tagList]);
-    }
+    });
   }
 
   protected addTag(): void {
