@@ -1,0 +1,14 @@
+{
+  "name": "conduit-e2e",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --project=angular",
+    "test:legacy": "playwright test --project=legacy",
+    "test:all": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^22.0.0",
+    "typescript": "5.9"
+  }
+}

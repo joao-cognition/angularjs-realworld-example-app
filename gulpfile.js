@@ -41,9 +41,12 @@ gulp.task('browserify', ['views'], function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src("src/index.html")
+  var html = gulp.src("src/index.html")
       .on('error', interceptErrors)
       .pipe(gulp.dest('./build/'));
+  var css = gulp.src("src/css/**/*.css")
+      .pipe(gulp.dest('./build/css/'));
+  return merge(html, css);
 });
 
 gulp.task('views', function() {
@@ -62,11 +65,14 @@ gulp.task('build', ['html', 'browserify'], function() {
   var html = gulp.src("build/index.html")
                  .pipe(gulp.dest('./dist/'));
 
+  var css = gulp.src("build/css/**/*.css")
+                .pipe(gulp.dest('./dist/css/'));
+
   var js = gulp.src("build/main.js")
                .pipe(uglify())
                .pipe(gulp.dest('./dist/'));
 
-  return merge(html,js);
+  return merge(html,js,css);
 });
 
 gulp.task('default', ['html', 'browserify'], function() {
