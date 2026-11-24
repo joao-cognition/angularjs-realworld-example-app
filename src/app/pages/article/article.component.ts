@@ -2,7 +2,7 @@ import { Component, inject, input, linkedSignal, signal } from '@angular/core';
 import { toObservable, takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { catchError, of, switchMap, tap } from 'rxjs';
 import { CommentsService } from '../../core/comments.service';
 import { toErrors } from '../../core/errors';
 import { Article, Comment, Errors } from '../../core/models';
@@ -111,7 +111,14 @@ export class ArticleComponent {
   constructor() {
     toObservable(this.article)
       .pipe(
-        switchMap((article) => this.commentsService.getAll(article.slug)),
+        tap(() => {
+          this.commentBody = '';
+          this.commentErrors.set(null);
+          this.comments.set([]);
+        }),
+        switchMap((article) =>
+          this.commentsService.getAll(article.slug).pipe(catchError(() => of([]))),
+        ),
         takeUntilDestroyed(),
       )
       .subscribe((comments) => this.comments.set(comments));
