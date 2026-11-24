@@ -1,4 +1,4 @@
-import { Directive, input, signal } from '@angular/core';
+import { Directive, input, linkedSignal } from '@angular/core';
 
 const DEFAULT_AVATAR = 'default-avatar.svg';
 
@@ -13,5 +13,5 @@ const DEFAULT_AVATAR = 'default-avatar.svg';
 export class AvatarDirective {
   readonly appAvatar = input<string | null | undefined>();
   protected readonly fallback = DEFAULT_AVATAR;
-  protected readonly failed = signal(false);
+  protected readonly failed = linkedSignal({ source: this.appAvatar, computation: () => false });
 }
