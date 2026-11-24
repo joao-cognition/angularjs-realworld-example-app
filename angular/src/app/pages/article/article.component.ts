@@ -115,7 +115,7 @@ export class ArticleComponent {
 
   protected readonly current = linkedSignal(() => this.article());
   protected readonly bodyHtml = computed(() =>
-    marked.parse(this.current().body ?? '', { async: false }),
+    withSafeLinks(marked.parse(this.current().body ?? '', { async: false })),
   );
   protected readonly comments = signal<Comment[]>([]);
   protected readonly commentErrors = signal<Errors | null>(null);
@@ -162,4 +162,11 @@ export class ArticleComponent {
       this.comments.update((list) => list.filter((c) => c.id !== comment.id));
     });
   }
+}
+
+/** Forces `rel="noopener noreferrer"` on every link so author-supplied anchors can't keep `window.opener`. */
+function withSafeLinks(html: string): string {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  doc.querySelectorAll('a').forEach((a) => a.setAttribute('rel', 'noopener noreferrer'));
+  return doc.body.innerHTML;
 }
