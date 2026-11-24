@@ -1,3 +1,4 @@
+import { AvatarFallbackDirective } from '../../shared/avatar-fallback.directive';
 import { DatePipe } from '@angular/common';
 import { Component, computed, inject, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -7,7 +8,7 @@ import { AvatarPipe } from '../../shared/avatar.pipe';
 
 @Component({
   selector: 'app-comment',
-  imports: [RouterLink, DatePipe, AvatarPipe],
+  imports: [AvatarFallbackDirective, RouterLink, DatePipe, AvatarPipe],
   template: `
     <div class="card">
       <div class="card-block">
@@ -15,10 +16,17 @@ import { AvatarPipe } from '../../shared/avatar.pipe';
       </div>
       <div class="card-footer">
         <a class="comment-author" [routerLink]="['/@' + comment().author.username]">
-          <img [src]="comment().author.image | avatar" class="comment-author-img" alt="" />
+          <img
+            appAvatar
+            [src]="comment().author.image | avatar"
+            class="comment-author-img"
+            alt=""
+          />
         </a>
         &nbsp;
-        <a class="comment-author" [routerLink]="['/@' + comment().author.username]">{{ comment().author.username }}</a>
+        <a class="comment-author" [routerLink]="['/@' + comment().author.username]">{{
+          comment().author.username
+        }}</a>
         <span class="date-posted">{{ comment().createdAt | date: 'longDate' }}</span>
         @if (canModify()) {
           <span class="mod-options">

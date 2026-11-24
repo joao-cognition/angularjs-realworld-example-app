@@ -21,27 +21,56 @@ import { ListErrorsComponent } from '../../shared/list-errors.component';
             <form [formGroup]="form" (ngSubmit)="submitForm()">
               <fieldset [disabled]="submitting()">
                 <fieldset class="form-group">
-                  <input class="form-control" type="text" placeholder="URL of profile picture" formControlName="image" />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="URL of profile picture"
+                    formControlName="image"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="text" placeholder="Username" formControlName="username" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="text"
+                    placeholder="Username"
+                    formControlName="username"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <textarea class="form-control form-control-lg" rows="8" placeholder="Short bio about you" formControlName="bio"></textarea>
+                  <textarea
+                    class="form-control form-control-lg"
+                    rows="8"
+                    placeholder="Short bio about you"
+                    formControlName="bio"
+                  ></textarea>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="email" placeholder="Email" formControlName="email" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="email"
+                    placeholder="Email"
+                    formControlName="email"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="password" placeholder="New Password" formControlName="password" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="password"
+                    placeholder="New Password"
+                    formControlName="password"
+                  />
                 </fieldset>
-                <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Update Settings</button>
+                <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+                  Update Settings
+                </button>
               </fieldset>
             </form>
 
             <hr />
 
-            <button class="btn btn-outline-danger" type="button" (click)="logout()">Or click here to logout.</button>
+            <button class="btn btn-outline-danger" type="button" (click)="logout()">
+              Or click here to logout.
+            </button>
           </div>
         </div>
       </div>
@@ -58,9 +87,15 @@ export class SettingsComponent {
   private readonly me = this.user.current();
   protected readonly form = new FormGroup({
     image: new FormControl(this.me?.image ?? '', { nonNullable: true }),
-    username: new FormControl(this.me?.username ?? '', { nonNullable: true, validators: [Validators.required] }),
+    username: new FormControl(this.me?.username ?? '', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
     bio: new FormControl(this.me?.bio ?? '', { nonNullable: true }),
-    email: new FormControl(this.me?.email ?? '', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    email: new FormControl(this.me?.email ?? '', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.email],
+    }),
     password: new FormControl('', { nonNullable: true }),
   });
 

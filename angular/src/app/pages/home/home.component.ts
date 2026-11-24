@@ -26,17 +26,28 @@ import { ShowAuthedDirective } from '../../shared/show-authed.directive';
             <div class="feed-toggle">
               <ul class="nav nav-pills outline-active">
                 <li class="nav-item" *appShowAuthed="true">
-                  <a href="" class="nav-link" [class.active]="listConfig().type === 'feed'"
-                    (click)="$event.preventDefault(); changeList({ type: 'feed' })">Your Feed</a>
+                  <a
+                    href=""
+                    class="nav-link"
+                    [class.active]="listConfig().type === 'feed'"
+                    (click)="$event.preventDefault(); changeList({ type: 'feed' })"
+                    >Your Feed</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link"
+                  <a
+                    href=""
+                    class="nav-link"
                     [class.active]="listConfig().type === 'all' && !listConfig().filters"
-                    (click)="$event.preventDefault(); changeList({ type: 'all' })">Global Feed</a>
+                    (click)="$event.preventDefault(); changeList({ type: 'all' })"
+                    >Global Feed</a
+                  >
                 </li>
                 @if (listConfig().filters?.tag; as tag) {
                   <li class="nav-item">
-                    <a href="" class="nav-link active" (click)="$event.preventDefault()"><i class="ion-pound"></i> {{ tag }}</a>
+                    <a href="" class="nav-link active" (click)="$event.preventDefault()"
+                      ><i class="ion-pound"></i> {{ tag }}</a
+                    >
                   </li>
                 }
               </ul>
@@ -52,8 +63,14 @@ import { ShowAuthedDirective } from '../../shared/show-authed.directive';
                 @if (tags.length) {
                   <div class="tag-list">
                     @for (tag of tags; track tag) {
-                      <a href="" class="tag-default tag-pill"
-                        (click)="$event.preventDefault(); changeList({ type: 'all', filters: { tag } })">{{ tag }}</a>
+                      <a
+                        href=""
+                        class="tag-default tag-pill"
+                        (click)="
+                          $event.preventDefault(); changeList({ type: 'all', filters: { tag } })
+                        "
+                        >{{ tag }}</a
+                      >
                     }
                   </div>
                 } @else {

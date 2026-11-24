@@ -1,3 +1,4 @@
+import { AvatarFallbackDirective } from '../../shared/avatar-fallback.directive';
 import { Component, computed, inject, input, linkedSignal, signal } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
@@ -16,14 +17,27 @@ import { CommentComponent } from './comment.component';
 
 @Component({
   selector: 'app-article',
-  imports: [FormsModule, RouterLink, AvatarPipe, ListErrorsComponent, ShowAuthedDirective, ArticleActionsComponent, CommentComponent],
+  imports: [
+    AvatarFallbackDirective,
+    FormsModule,
+    RouterLink,
+    AvatarPipe,
+    ListErrorsComponent,
+    ShowAuthedDirective,
+    ArticleActionsComponent,
+    CommentComponent,
+  ],
   template: `
     <div class="article-page">
       <div class="banner">
         <div class="container">
           <h1>{{ current().title }}</h1>
           <div class="article-meta">
-            <app-article-actions [article]="current()" (articleChange)="current.set($event)" (authorChange)="setAuthor($event)" />
+            <app-article-actions
+              [article]="current()"
+              (articleChange)="current.set($event)"
+              (authorChange)="setAuthor($event)"
+            />
           </div>
         </div>
       </div>
@@ -43,7 +57,11 @@ import { CommentComponent } from './comment.component';
         <hr />
 
         <div class="article-actions">
-          <app-article-actions [article]="current()" (articleChange)="current.set($event)" (authorChange)="setAuthor($event)" />
+          <app-article-actions
+            [article]="current()"
+            (articleChange)="current.set($event)"
+            (authorChange)="setAuthor($event)"
+          />
         </div>
 
         <div class="row">
@@ -53,10 +71,21 @@ import { CommentComponent } from './comment.component';
               <form class="card comment-form" (ngSubmit)="addComment()">
                 <fieldset [disabled]="submitting()">
                   <div class="card-block">
-                    <textarea class="form-control" placeholder="Write a comment..." rows="3" name="body" [(ngModel)]="commentBody"></textarea>
+                    <textarea
+                      class="form-control"
+                      placeholder="Write a comment..."
+                      rows="3"
+                      name="body"
+                      [(ngModel)]="commentBody"
+                    ></textarea>
                   </div>
                   <div class="card-footer">
-                    <img [src]="user.current()?.image | avatar" class="comment-author-img" alt="" />
+                    <img
+                      appAvatar
+                      [src]="user.current()?.image | avatar"
+                      class="comment-author-img"
+                      alt=""
+                    />
                     <button class="btn btn-sm btn-primary" type="submit">Post Comment</button>
                   </div>
                 </fieldset>
@@ -64,7 +93,8 @@ import { CommentComponent } from './comment.component';
             </div>
 
             <div *appShowAuthed="false">
-              <a routerLink="/login">Sign in</a> or <a routerLink="/register">sign up</a> to add comments on this article.
+              <a routerLink="/login">Sign in</a> or <a routerLink="/register">sign up</a> to add
+              comments on this article.
             </div>
 
             @for (comment of comments(); track comment.id) {

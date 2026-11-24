@@ -24,9 +24,7 @@ export const editableArticleResolver: ResolveFn<Article> = (route) => {
   return inject(ArticlesService)
     .get(route.paramMap.get('slug') ?? '')
     .pipe(
-      map((article) =>
-        article.author.username === user.current()?.username ? article : redirect,
-      ),
+      map((article) => (article.author.username === user.current()?.username ? article : redirect)),
       catchError(() => of(redirect)),
     );
 };

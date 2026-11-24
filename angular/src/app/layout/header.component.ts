@@ -1,3 +1,4 @@
+import { AvatarFallbackDirective } from '../shared/avatar-fallback.directive';
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AppConstants } from '../core/app.constants';
@@ -7,7 +8,7 @@ import { ShowAuthedDirective } from '../shared/show-authed.directive';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, ShowAuthedDirective, AvatarPipe],
+  imports: [AvatarFallbackDirective, RouterLink, RouterLinkActive, ShowAuthedDirective, AvatarPipe],
   template: `
     <nav class="navbar navbar-light">
       <div class="container">
@@ -15,7 +16,13 @@ import { ShowAuthedDirective } from '../shared/show-authed.directive';
 
         <ul *appShowAuthed="false" class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign in</a>
@@ -27,10 +34,21 @@ import { ShowAuthedDirective } from '../shared/show-authed.directive';
 
         <ul *appShowAuthed="true" class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/editor" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a
+              class="nav-link"
+              routerLink="/editor"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <i class="ion-compose"></i>&nbsp;New Article
             </a>
           </li>
@@ -41,8 +59,13 @@ import { ShowAuthedDirective } from '../shared/show-authed.directive';
           </li>
           @if (user.current(); as me) {
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/@' + me.username]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                <img [src]="me.image | avatar" class="user-pic" alt="" />
+              <a
+                class="nav-link"
+                [routerLink]="['/@' + me.username]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <img appAvatar [src]="me.image | avatar" class="user-pic" alt="" />
                 {{ me.username }}
               </a>
             </li>

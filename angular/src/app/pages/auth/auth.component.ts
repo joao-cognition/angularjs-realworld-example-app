@@ -29,16 +29,33 @@ import { ListErrorsComponent } from '../../shared/list-errors.component';
               <fieldset [disabled]="submitting()">
                 @if (authType() === 'register') {
                   <fieldset class="form-group">
-                    <input class="form-control form-control-lg" type="text" placeholder="Username" formControlName="username" />
+                    <input
+                      class="form-control form-control-lg"
+                      type="text"
+                      placeholder="Username"
+                      formControlName="username"
+                    />
                   </fieldset>
                 }
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="email" placeholder="Email" formControlName="email" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="email"
+                    placeholder="Email"
+                    formControlName="email"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="password" placeholder="Password" formControlName="password" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="password"
+                    placeholder="Password"
+                    formControlName="password"
+                  />
                 </fieldset>
-                <button class="btn btn-lg btn-primary pull-xs-right" type="submit">{{ title() }}</button>
+                <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+                  {{ title() }}
+                </button>
               </fieldset>
             </form>
           </div>
@@ -59,7 +76,10 @@ export class AuthComponent {
   protected readonly submitting = signal(false);
   protected readonly form = new FormGroup({
     username: new FormControl('', { nonNullable: true }),
-    email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    email: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.email],
+    }),
     password: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
   });
 

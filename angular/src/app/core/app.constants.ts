@@ -1,5 +1,7 @@
+import { environment } from '../../environments/environment';
+
 export const AppConstants = {
-  api: 'https://api.realworld.show/api',
+  api: environment.api,
   jwtKey: 'jwtToken',
   appName: 'Conduit',
 } as const;

@@ -17,7 +17,12 @@ import { FollowBtnComponent } from '../../shared/follow-btn.component';
           <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article().slug]">
             <i class="ion-edit"></i> Edit Article
           </a>
-          <button class="btn btn-sm btn-outline-danger" type="button" [class.disabled]="deleting()" (click)="deleteArticle()">
+          <button
+            class="btn btn-sm btn-outline-danger"
+            type="button"
+            [class.disabled]="deleting()"
+            (click)="deleteArticle()"
+          >
             <i class="ion-trash-a"></i> Delete Article
           </button>
         </span>

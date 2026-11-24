@@ -19,17 +19,37 @@ import { ListErrorsComponent } from '../../shared/list-errors.component';
             <form [formGroup]="form">
               <fieldset [disabled]="submitting()">
                 <fieldset class="form-group">
-                  <input class="form-control form-control-lg" type="text" placeholder="Article Title" formControlName="title" />
+                  <input
+                    class="form-control form-control-lg"
+                    type="text"
+                    placeholder="Article Title"
+                    formControlName="title"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control" type="text" placeholder="What's this article about?" formControlName="description" />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="What's this article about?"
+                    formControlName="description"
+                  />
                 </fieldset>
                 <fieldset class="form-group">
-                  <textarea class="form-control" rows="8" placeholder="Write your article (in markdown)" formControlName="body"></textarea>
+                  <textarea
+                    class="form-control"
+                    rows="8"
+                    placeholder="Write your article (in markdown)"
+                    formControlName="body"
+                  ></textarea>
                 </fieldset>
                 <fieldset class="form-group">
-                  <input class="form-control" type="text" placeholder="Enter tags" formControlName="tagField"
-                    (keydown.enter)="$event.preventDefault(); addTag()" />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter tags"
+                    formControlName="tagField"
+                    (keydown.enter)="$event.preventDefault(); addTag()"
+                  />
                   <div class="tag-list">
                     @for (tag of tagList(); track tag) {
                       <span class="tag-default tag-pill">
@@ -39,7 +59,13 @@ import { ListErrorsComponent } from '../../shared/list-errors.component';
                     }
                   </div>
                 </fieldset>
-                <button class="btn btn-lg pull-xs-right btn-primary" type="button" (click)="submit()">Publish Article</button>
+                <button
+                  class="btn btn-lg pull-xs-right btn-primary"
+                  type="button"
+                  (click)="submit()"
+                >
+                  Publish Article
+                </button>
               </fieldset>
             </form>
           </div>

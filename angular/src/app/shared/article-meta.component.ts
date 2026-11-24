@@ -1,3 +1,4 @@
+import { AvatarFallbackDirective } from './avatar-fallback.directive';
 import { DatePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -6,11 +7,11 @@ import { AvatarPipe } from './avatar.pipe';
 
 @Component({
   selector: 'app-article-meta',
-  imports: [RouterLink, DatePipe, AvatarPipe],
+  imports: [AvatarFallbackDirective, RouterLink, DatePipe, AvatarPipe],
   template: `
     <div class="article-meta">
       <a [routerLink]="['/@' + article().author.username]">
-        <img [src]="article().author.image | avatar" alt="" />
+        <img appAvatar [src]="article().author.image | avatar" alt="" />
       </a>
       <div class="info">
         <a class="author" [routerLink]="['/@' + article().author.username]">{{

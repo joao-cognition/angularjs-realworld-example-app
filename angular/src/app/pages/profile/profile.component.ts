@@ -1,3 +1,4 @@
+import { AvatarFallbackDirective } from '../../shared/avatar-fallback.directive';
 import { Component, computed, inject, input, linkedSignal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Profile } from '../../core/models';
@@ -7,14 +8,21 @@ import { FollowBtnComponent } from '../../shared/follow-btn.component';
 
 @Component({
   selector: 'app-profile',
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, AvatarPipe, FollowBtnComponent],
+  imports: [
+    AvatarFallbackDirective,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+    AvatarPipe,
+    FollowBtnComponent,
+  ],
   template: `
     <div class="profile-page">
       <div class="user-info">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-md-10 offset-md-1">
-              <img [src]="current().image | avatar" class="user-img" alt="" />
+              <img appAvatar [src]="current().image | avatar" class="user-img" alt="" />
               <h4>{{ current().username }}</h4>
               <p>{{ current().bio }}</p>
 
@@ -36,10 +44,21 @@ import { FollowBtnComponent } from '../../shared/follow-btn.component';
             <div class="articles-toggle">
               <ul class="nav nav-pills outline-active">
                 <li class="nav-item">
-                  <a class="nav-link" [routerLink]="['/@' + current().username]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">My Articles</a>
+                  <a
+                    class="nav-link"
+                    [routerLink]="['/@' + current().username]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >My Articles</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" [routerLink]="['/@' + current().username, 'favorites']" routerLinkActive="active">Favorited Articles</a>
+                  <a
+                    class="nav-link"
+                    [routerLink]="['/@' + current().username, 'favorites']"
+                    routerLinkActive="active"
+                    >Favorited Articles</a
+                  >
                 </li>
               </ul>
             </div>

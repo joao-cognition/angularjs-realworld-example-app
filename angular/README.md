@@ -1,59 +1,28 @@
-# Angular
+# Conduit — Angular 21 port
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.31.
+Standalone-component / signals rewrite of the AngularJS 1.5 app in `../src/js` (kept for reference until parity sign-off).
 
-## Development server
+| Task | Command (Node 24) |
+| --- | --- |
+| Install | `npx -y npm@11 install` |
+| Dev server (public API) | `NG_CLI_ANALYTICS=false npx ng serve --port 4200` |
+| Dev server (local API, for E2E) | `NG_CLI_ANALYTICS=false npx ng serve --port 4200 --configuration local` |
+| Unit tests (Vitest) | `npx ng test --watch=false` |
+| Production build | `npx ng build` |
 
-To start a local development server, run:
+The API base URL lives in `src/environments/environment*.ts`; `--configuration local` points the app at `http://localhost:8080`.
 
-```bash
-ng serve
-```
+## E2E (`../e2e`)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The public `api.realworld.show` returns the same token for every account, so multi-user flows cannot be tested against it.
+The suite runs against a local RealWorld backend, e.g. [spring-boot-realworld-example-app](https://github.com/COG-GTM/spring-boot-realworld-example-app):
 
 ```bash
-ng generate --help
+# backend (Java 11)
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ./gradlew bootRun \
+  --args='--spring.datasource.url=jdbc:sqlite:dev.db?busy_timeout=15000&journal_mode=WAL'
+# app
+cd angular && npx ng serve --port 4200 --configuration local
+# tests (global setup seeds 12 demo articles)
+cd e2e && npm install && npx playwright install chromium && npx playwright test --project=angular
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
